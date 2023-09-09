@@ -6,7 +6,6 @@
   "scripts": {
     "test": "mocha"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.12",
@@ -15,5 +14,7 @@
     "mocha": "^10.2.0",
     "solc": "^0.8.21",
     "web3": "^4.1.1"
-  }
+  },
+  "repository": "https://github.com/vikashruhilgit/ethereum-solodity-app.git",
+  "author": "Vikash Ruhil <v_ruhil@yahoo.com>"
 }
