@@ -4,10 +4,9 @@ const { Web3 } = require("web3");
 const { abi, evm } = require("./compile");
 
 const mnemonic = process.env.MNEMONIC;
-const provider = new HDWalletProvider(
-  mnemonic,
-  "https://sepolia.infura.io/v3/0a40a3ad84dd4675b84384557de3432b"
-);
+const infuraEndpoint = process.env.SEPOLIA_INFURA_ENDPOINT;
+
+const provider = new HDWalletProvider(mnemonic, infuraEndpoint);
 const web3 = new Web3(provider);
 
 const initialMsg = "hey";
