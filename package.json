@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "license": "ISC",
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.12",
     "dotenv": "^16.3.1",
     "ganache": "^7.9.1",
-    "mocha": "^10.2.0",
     "solc": "^0.8.21",
     "web3": "^4.1.1"
   },
   "repository": "https://github.com/vikashruhilgit/ethereum-solodity-app.git",
-  "author": "Vikash Ruhil <v_ruhil@yahoo.com>"
+  "author": "Vikash Ruhil <v_ruhil@yahoo.com>",
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.4"
+  }
 }

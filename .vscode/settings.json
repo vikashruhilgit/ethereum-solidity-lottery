@@ -1,5 +1,10 @@
 {
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "solidity.compileUsingRemoteVersion": "v0.8.21+commit.d9974bed"
+  "solidity.compileUsingRemoteVersion": "v0.8.21+commit.d9974bed",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "razor": "html",
+    "plaintext": "pug"
+  }
 }
