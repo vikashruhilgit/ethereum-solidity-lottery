@@ -2,15 +2,19 @@ const fs = require("fs");
 const path = require("path");
 const solc = require("solc");
 
-const filePath = path.resolve(__dirname, "contracts", "Lottery.sol");
+const fileName = "Lottery.sol";
+const contractName = "Lottery";
 
-const source = fs.readFileSync(filePath, "utf8");
+const contractPath = path.resolve(__dirname, "contracts", fileName);
 
+const sourceCode = fs.readFileSync(contractPath, "utf8");
+
+// solc compiler config
 const input = {
   language: "Solidity",
   sources: {
-    "Lottery.solc": {
-      content: source,
+    [fileName]: {
+      content: sourceCode,
     },
   },
   settings: {
@@ -22,8 +26,16 @@ const input = {
   },
 };
 
-const output = JSON.parse(solc.compile(JSON.stringify(input))).contracts[
-  "Lottery.solc"
-].Lottery;
+const compiledCode = JSON.parse(solc.compile(JSON.stringify(input)));
 
-module.exports = output;
+const bytecode =
+  compiledCode.contracts[fileName][contractName].evm.bytecode.object;
+const bytecodePath = path.join(__dirname, "data", "LotteryBytecode.bin");
+fs.writeFileSync(bytecodePath, bytecode); 
+
+const abi = compiledCode.contracts[fileName][contractName].abi;
+
+const abiPath = path.join(__dirname, "data", "LotteryAbi.json");
+fs.writeFileSync(abiPath, JSON.stringify(abi, null, "\t"));
+
+module.exports = { bytecode, abi };
