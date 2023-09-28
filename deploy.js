@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const Web3 = require("web3");
+const { Web3 } = require("web3");
 
 const mnemonicPhrase = process.env.MNEMONIC;
 const providerOrUrl = process.env.SEPOLIA_INFURA_ENDPOINT;

@@ -12,7 +12,7 @@
     "dotenv": "^16.3.1",
     "ganache": "^7.9.1",
     "solc": "^0.8.21",
-    "web3": "1.10.2"
+    "web3": "^4.1.2"
   },
   "repository": "https://github.com/vikashruhilgit/ethereum-solodity-app.git",
   "author": "Vikash Ruhil <v_ruhil@yahoo.com>",
